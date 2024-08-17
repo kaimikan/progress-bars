@@ -1,0 +1,24 @@
+{
+  "name": "progress-bars",
+  "version": "1.0.0",
+  "description": "making tracking and showcasing task progress easier",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaimikan/progress-bars.git"
+  },
+  "author": "kaimikan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaimikan/progress-bars/issues"
+  },
+  "homepage": "https://github.com/kaimikan/progress-bars#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
