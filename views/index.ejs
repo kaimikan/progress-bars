@@ -8,6 +8,18 @@
   </head>
   <body>
     <div>
+      <% if (locals.progressBars) { %>
+      <ul>
+        <b>Database info:</b>
+        <% for(let progressBar of progressBars) { %>
+        <li>
+          Title: "<%= progressBar.title %>"; Hours: <%= progressBar.hours %>
+        </li>
+        <% } %>
+      </ul>
+      <% } else { %>
+      <p>Could not connect to the database.</p>
+      <% } %>
       <h3>5 Minutes Progress Bar:</h3>
       <div class="progress-container">
         <!-- Squares will be dynamically added here by JavaScript -->
