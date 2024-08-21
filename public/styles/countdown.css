@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.progress-ring {
+  transform: rotate(0deg);
+  margin-bottom: 20px;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.time-display {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+#start-btn:disabled {
+  background-color: #316032;
+  color: grey;
+}
+
+#pause-btn {
+  background-color: #ffa500;
+  color: white;
+}
+
+#reset-btn {
+  background-color: #f44336;
+  color: white;
+}

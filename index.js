@@ -33,6 +33,10 @@ app.get('/', async (req, res) => {
   res.render('index.ejs', fetchedProgressBars);
 });
 
+app.get('/countdown', (req, res) => {
+  res.render('countdown.ejs');
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
