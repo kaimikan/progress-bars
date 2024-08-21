@@ -7,23 +7,65 @@
     <link rel="stylesheet" href="/styles/countdown.css" />
   </head>
   <body>
-    <div class="timer-container">
-      <svg class="progress-ring" width="120" height="120">
-        <circle
-          class="progress-ring__circle"
-          stroke="blue"
-          stroke-width="4"
-          fill="lightgrey"
-          r="54"
-          cx="60"
-          cy="60"
-        />
-      </svg>
-      <div class="time-display">00:30</div>
-      <div class="controls">
-        <button id="start-btn">Start</button>
-        <button id="pause-btn">Pause</button>
-        <button id="reset-btn">Reset</button>
+    <div class="timers-container">
+      <div class="timer-container" id="timer1">
+        <svg class="progress-ring" width="120" height="120">
+          <circle
+            class="progress-ring__circle"
+            stroke="blue"
+            stroke-width="4"
+            fill="transparent"
+            r="54"
+            cx="60"
+            cy="60"
+          />
+        </svg>
+        <div class="time-display">00:30</div>
+        <div class="controls">
+          <button class="start-btn">Start</button>
+          <button class="pause-btn">Pause</button>
+          <button class="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="timer-container" id="timer2">
+        <svg class="progress-ring" width="120" height="120">
+          <circle
+            class="progress-ring__circle"
+            stroke="green"
+            stroke-width="4"
+            fill="transparent"
+            r="54"
+            cx="60"
+            cy="60"
+          />
+        </svg>
+        <div class="time-display">00:45</div>
+        <div class="controls">
+          <button class="start-btn">Start</button>
+          <button class="pause-btn">Pause</button>
+          <button class="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="timer-container" id="timer3">
+        <svg class="progress-ring" width="120" height="120">
+          <circle
+            class="progress-ring__circle"
+            stroke="orange"
+            stroke-width="4"
+            fill="transparent"
+            r="54"
+            cx="60"
+            cy="60"
+          />
+        </svg>
+        <div class="time-display">01:00</div>
+        <div class="controls">
+          <button class="start-btn">Start</button>
+          <button class="pause-btn">Pause</button>
+          <button class="reset-btn">Reset</button>
+        </div>
       </div>
     </div>
     <script src="scripts/countdown.js"></script>

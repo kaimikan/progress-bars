@@ -2,10 +2,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+}
+
+.timers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .timers-container {
+    flex-direction: column;
+  }
 }
 
 .timer-container {
@@ -19,11 +31,12 @@ body {
 }
 
 .progress-ring {
-  transform: rotate(0deg);
   margin-bottom: 20px;
 }
 
 .progress-ring__circle {
+  stroke-width: 4;
+  fill: transparent;
   transition: 0.35s stroke-dashoffset;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
@@ -34,12 +47,6 @@ body {
   margin-bottom: 20px;
 }
 
-.control {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .controls button {
   margin: 5px;
   padding: 10px 20px;
@@ -47,24 +54,55 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-#start-btn {
+.start-btn {
   background-color: #4caf50;
   color: white;
 }
 
-#start-btn:disabled {
+.start-btn:disabled {
   background-color: #316032;
   color: grey;
 }
 
-#pause-btn {
+.pause-btn {
   background-color: #ffa500;
   color: white;
 }
 
-#reset-btn {
+.pause-btn:disabled {
+  background-color: #815e1e;
+  color: grey;
+}
+
+.reset-btn {
   background-color: #f44336;
   color: white;
+}
+
+.reset-btn:disabled {
+  background-color: #772f2a;
+  color: grey;
+}
+
+.controls button:hover {
+  opacity: 0.8;
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+.start-btn:hover {
+  background-color: #45a049;
+}
+
+.pause-btn:hover {
+  background-color: #e69500;
+}
+
+.reset-btn:hover {
+  background-color: #d32f2f;
 }
