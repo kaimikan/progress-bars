@@ -7,8 +7,51 @@
     <link rel="stylesheet" href="/styles/countdown.css" />
   </head>
   <body>
-    <div class="timers-container">
+    <div class="form-container">
+      <form id="timer-form">
+        <div class="title" id="toggle-timer-form">New Timer</div>
+        <div id="toggle-form-content" visible="false">
+          <label for="title">Title:</label>
+          <input type="text" id="timer-title" name="text" required />
+
+          <label for="duration-hours">Hours:</label>
+          <input
+            type="number"
+            id="duration-hours"
+            name="duration-hours"
+            min="0"
+            value="0"
+            required
+          />
+
+          <label for="duration-minutes">Minutes:</label>
+          <input
+            type="number"
+            id="duration-minutes"
+            name="duration-minutes"
+            min="0"
+            value="0"
+            required
+          />
+
+          <label for="duration-seconds">Seconds:</label>
+          <input
+            type="number"
+            id="duration-seconds"
+            name="duration-seconds"
+            min="0"
+            value="0"
+            required
+          />
+
+          <button type="submit">Add Timer</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="timers-container" id="timers-container">
       <div class="timer-container" id="timer1">
+        <div class="title">Coding</div>
         <svg class="progress-ring" width="120" height="120">
           <circle
             class="progress-ring__circle"
@@ -28,7 +71,8 @@
         </div>
       </div>
 
-      <div class="timer-container" id="timer2">
+      <!-- <div class="timer-container" id="timer2">
+        <div class="title">Writing/Drawing</div>
         <svg class="progress-ring" width="120" height="120">
           <circle
             class="progress-ring__circle"
@@ -49,6 +93,7 @@
       </div>
 
       <div class="timer-container" id="timer3">
+        <div class="title">Exercise</div>
         <svg class="progress-ring" width="120" height="120">
           <circle
             class="progress-ring__circle"
@@ -66,7 +111,7 @@
           <button class="pause-btn">Pause</button>
           <button class="reset-btn">Reset</button>
         </div>
-      </div>
+      </div> -->
     </div>
     <script src="scripts/countdown.js"></script>
   </body>

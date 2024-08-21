@@ -1,11 +1,71 @@
 body {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+}
+
+.form-container {
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle-timer-form {
+  cursor: pointer;
+}
+
+#toggle-form-content[visible='false'] {
+  display: none;
+}
+
+#toggle-form-content[visible='true'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer-form label {
+  margin-bottom: 10px;
+}
+
+#timer-form input {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+#timer-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#timer-form button:hover {
+  background-color: #45a049;
+}
+
+#timer-form button:active {
+  transform: scale(0.95);
 }
 
 .timers-container {
@@ -28,6 +88,12 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
 }
 
 .progress-ring {

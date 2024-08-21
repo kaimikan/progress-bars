@@ -53,12 +53,15 @@ class CountdownTimer {
   }
 
   updateDisplay() {
-    const minutes = Math.floor(this.timeLeft / 60);
+    const hours = Math.floor(this.timeLeft / 60 / 60);
+    const minutes = Math.floor(this.timeLeft / 60) % 60;
     const seconds = this.timeLeft % 60;
 
-    this.timeDisplay.textContent = `${minutes
+    this.timeDisplay.textContent = `${hours
       .toString()
-      .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      .padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`;
   }
 
   setCircleProgress() {
@@ -94,9 +97,68 @@ class CountdownTimer {
 
 // Initialize multiple timers
 document.addEventListener('DOMContentLoaded', () => {
-  const timers = [
-    new CountdownTimer(document.getElementById('timer1'), 30),
-    new CountdownTimer(document.getElementById('timer2'), 45),
-    new CountdownTimer(document.getElementById('timer3'), 60),
-  ];
+  // const timers = [
+  //   new CountdownTimer(document.getElementById('timer1'), 30),
+  //   new CountdownTimer(document.getElementById('timer2'), 45),
+  //   new CountdownTimer(document.getElementById('timer3'), 60),
+  // ];
+  new CountdownTimer(document.getElementById('timer1'), 30);
+
+  const timersContainer = document.getElementById('timers-container');
+  const timerForm = document.getElementById('timer-form');
+
+  const toggleTimerFormBtn = document.getElementById('toggle-timer-form');
+  const toggleTimerForm = document.getElementById('toggle-form-content');
+
+  timerForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const durationHoursInput = document.getElementById('duration-hours');
+    const durationMinutesInput = document.getElementById('duration-minutes');
+    const durationSecondsInput = document.getElementById('duration-seconds');
+    const duration =
+      parseInt(durationHoursInput.value, 10) * 60 * 60 +
+      parseInt(durationMinutesInput.value, 10) * 60 +
+      parseInt(durationSecondsInput.value);
+
+    const titleInput = document.getElementById('timer-title');
+
+    if (isNaN(duration) || duration <= 0) {
+      alert('Please enter a valid duration.');
+      return;
+    }
+
+    // Create a new timer container
+    const timerContainer = document.createElement('div');
+    timerContainer.className = 'timer-container';
+
+    timerContainer.innerHTML = `
+        
+        <div class="title">${titleInput.value}</div>
+        <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="54" cx="60" cy="60"/>
+        </svg>
+        <div class="time-display">00:00</div>
+        <div class="controls">
+            <button class="start-btn">Start</button>
+            <button class="pause-btn">Pause</button>
+            <button class="reset-btn">Reset</button>
+        </div>
+    `;
+
+    timersContainer.appendChild(timerContainer);
+
+    // Initialize the new timer
+    new CountdownTimer(timerContainer, duration);
+
+    // Clear the form
+    timerForm.reset();
+  });
+
+  toggleTimerFormBtn.addEventListener('click', (event) => {
+    const isVisible =
+      toggleTimerForm.getAttribute('visible').toLowerCase() === 'true';
+    console.log(isVisible);
+    toggleTimerForm.setAttribute('visible', !isVisible);
+  });
 });
