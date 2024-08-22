@@ -37,6 +37,10 @@ app.get('/countdown', (req, res) => {
   res.render('countdown.ejs');
 });
 
+app.get('/bar', (req, res) => {
+  res.render('bar.ejs');
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });

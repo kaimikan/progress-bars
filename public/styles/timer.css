@@ -1,0 +1,92 @@
+.timers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .timers-container {
+    flex-direction: column;
+  }
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.time-display {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.start-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.start-btn:disabled {
+  background-color: #316032;
+  color: grey;
+}
+
+.pause-btn {
+  background-color: #ffa500;
+  color: white;
+}
+
+.pause-btn:disabled {
+  background-color: #815e1e;
+  color: grey;
+}
+
+.reset-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.reset-btn:disabled {
+  background-color: #772f2a;
+  color: grey;
+}
+
+.controls button:hover {
+  opacity: 0.8;
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+.start-btn:hover {
+  background-color: #45a049;
+}
+
+.pause-btn:hover {
+  background-color: #e69500;
+}
+
+.reset-btn:hover {
+  background-color: #d32f2f;
+}
